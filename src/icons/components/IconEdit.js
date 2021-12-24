@@ -2,7 +2,7 @@ import React from 'react'
 import useIconSize from '../icon-size'
 import IconPropTypes from '../IconPropTypes'
 
-function IconEdit({ size, ...props }) {
+function IconEdit({ size = undefined, ...props }) {
   const sizeValue = useIconSize(size)
   return (
     <svg

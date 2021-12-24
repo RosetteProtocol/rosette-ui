@@ -2,7 +2,7 @@ import React from 'react'
 import useIconSize from '../icon-size'
 import IconPropTypes from '../IconPropTypes'
 
-function IconEllipsis({ size, ...props }) {
+function IconEllipsis({ size = undefined, ...props }) {
   const sizeValue = useIconSize(size)
   return (
     <svg
