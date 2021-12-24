@@ -30,7 +30,15 @@ function getLayoutSize(parentWidth, breakpoints) {
 }
 
 const LayoutContext = React.createContext({})
-
+/**
+ * Some layout method
+ *
+ * @typedef {object} layoutType
+ * @property {("small" | "medium" | "large" | "max")} layoutName
+ * @property {string} layoutWidth
+ *
+ * @returns {layoutType}
+ */
 function useLayout() {
   const { layoutWidth, layoutName } = useContext(LayoutContext)
   return {
