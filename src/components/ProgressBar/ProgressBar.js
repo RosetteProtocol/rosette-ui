@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from '../../proptypes'
 import styled, { keyframes } from 'styled-components'
-import { useSpring, animated, interpolate } from 'react-spring/hooks'
+import { useSpring, animated, interpolate } from 'react-spring/web'
 import { springs } from '../../style'
 import { useTheme } from '../../theme'
 import { warnOnce } from '../../utils/environment'
