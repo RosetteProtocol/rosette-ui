@@ -4,7 +4,12 @@ import ButtonBase from '../ButtonBase/ButtonBase'
 import { useTheme } from '../../theme'
 import { RADIUS } from '../../style'
 
-function Link({ onClick, href, external, ...props }) {
+function Link({
+  onClick = () => {},
+  href = undefined,
+  external = undefined,
+  ...props
+}) {
   const theme = useTheme()
 
   // `external` defaults to `true` if `href` is present, `false` otherwise.

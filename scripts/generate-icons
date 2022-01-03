@@ -26,7 +26,7 @@ const SVGR_OPTIONS = {
 import useIconSize from '../icon-size'
 import IconPropTypes from '../IconPropTypes'
 
-function ${componentName}({ size, ...${props} }) {
+function ${componentName}({ size=undefined, ...${props} }) {
   const sizeValue = useIconSize(size)
   return ${jsx}
 }

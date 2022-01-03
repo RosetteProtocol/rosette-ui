@@ -3,7 +3,17 @@ import PropTypes from 'prop-types'
 
 const RootContext = React.createContext(null)
 
-function RootProvider({ children, ...props }) {
+/**
+ * RootProvider
+ *
+ * @typedef {object} RootProvider
+ * @property {any} [children]
+ * @property {[*]} [props]
+ *
+ * @param {RootProvider}
+ * @returns {React.FC}
+ */
+function RootProvider({ children = undefined, ...props }) {
   const [element, setElement] = useState(null)
 
   const handleRef = useCallback(element => {
@@ -41,6 +51,9 @@ RootProvider.propTypes = {
 function Root(props) {
   return <RootContext.Consumer {...props} />
 }
+/**
+ * @type {React.FC}
+ */
 Root.Provider = RootProvider
 
 const useRoot = () => useContext(RootContext)
