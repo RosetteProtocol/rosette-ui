@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Page from 'comps/Page/Page'
 import readme from 'ui-src/components/LineChart/README.md'
 import { LineChart, springs } from '@1hive/1hive-ui'
-import { config } from 'react-spring'
+import { config } from 'react-spring/renderprops'
 import Container from '../components/Page/DemoContainer'
 
 const values = [0.28, 0.35, 0.41, 0.48, 0.59, 0.73, 0.86]
