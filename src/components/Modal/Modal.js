@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Transition, animated } from 'react-spring'
+import { Transition, animated } from 'react-spring/renderprops'
 import { cssPx, noop } from '../../utils'
 import { springs, GU, BIG_RADIUS } from '../../style'
 import { useTheme } from '../../theme'
@@ -13,13 +13,13 @@ import RootPortal from '../RootPortal/RootPortal'
 const SPACE_AROUND = 4 * GU
 
 function Modal({
-  children,
-  onClose,
-  onClosed,
-  padding,
-  visible,
-  width,
-  closeButton,
+  children = undefined,
+  onClose = () => {},
+  onClosed = () => {},
+  padding = undefined,
+  visible = undefined,
+  width = undefined,
+  closeButton = undefined,
   ...props
 }) {
   const theme = useTheme()

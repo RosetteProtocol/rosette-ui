@@ -6,7 +6,12 @@ import { useTheme } from '../../theme/Theme'
 import { useLayout } from '../Layout/Layout'
 import { warnOnce } from '../../utils'
 
-function Box({ heading, children, padding, ...props }) {
+function Box({
+  heading = undefined,
+  children = undefined,
+  padding = undefined,
+  ...props
+}) {
   const theme = useTheme()
   const [insideSplitPrimary] = useInside('Split:primary')
   const { layoutName } = useLayout()

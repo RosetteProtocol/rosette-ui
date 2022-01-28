@@ -2,7 +2,7 @@ import React from 'react'
 import useIconSize from '../icon-size'
 import IconPropTypes from '../IconPropTypes'
 
-function IconChat({ size, ...props }) {
+function IconChat({ size = undefined, ...props }) {
   const sizeValue = useIconSize(size)
   return (
     <svg

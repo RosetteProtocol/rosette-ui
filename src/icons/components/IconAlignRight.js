@@ -2,7 +2,7 @@ import React from 'react'
 import useIconSize from '../icon-size'
 import IconPropTypes from '../IconPropTypes'
 
-function IconAlignRight({ size, ...props }) {
+function IconAlignRight({ size = undefined, ...props }) {
   const sizeValue = useIconSize(size)
   return (
     <svg

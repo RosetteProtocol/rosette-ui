@@ -2,7 +2,7 @@ import React from 'react'
 import useIconSize from '../icon-size'
 import IconPropTypes from '../IconPropTypes'
 
-function IconMinus({ size, ...props }) {
+function IconMinus({ size = undefined, ...props }) {
   const sizeValue = useIconSize(size)
   return (
     <svg
