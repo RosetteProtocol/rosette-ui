@@ -1464,7 +1464,7 @@ export declare function Info({
   [x: string]: any
   children?: any
   title?: any
-  mode?: Info.MODES
+  mode?: Info.Modes
   color?: string
   titleColor?: string
   background?: string
@@ -1472,25 +1472,17 @@ export declare function Info({
 }): JSX.Element
 
 export declare namespace Info {
-  export enum MODES  {
-    INFO='info', 
-    WARNING='warning', 
-    ERROR='error', 
-    DESCRIPTION='description'
-  }
+  export type Modes  =
+    | 'info'
+    | 'description'
+    | 'warning'
+    | 'error'
 
-  export {
-    Info as Action
-  }
-  export {
-    Warning as Permissions
-  }
-  export {
-    Warning as Alert
-  }
+  export function Description(props: any): JSX.Element
+  export function Error(props: any): JSX.Element
+  export function Warning(props: any): JSX.Element
 }
 
-export declare function Warning(props: any): JSX.Element
 
 
 export declare function initContainsComponent(): {
