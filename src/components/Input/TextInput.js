@@ -48,7 +48,8 @@ const TextInput = React.forwardRef(
 
           &:focus {
             outline: none;
-            border-color: ${theme.selected};
+            border-color: ${theme.focus};
+            border: 2px solid;
           }
 
           &:read-only {

@@ -10,16 +10,20 @@ class RadioGroup extends React.PureComponent {
     selected: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func,
   }
+
   static defaultProps = {
     onChange: noop,
   }
+
   state = {
     // keep track of the radios buttons to handle keyboard navigation
     radios: new Set(),
   }
+
   handleChange = id => {
     this.props.onChange(id)
   }
+
   addRadio = id => {
     this.setState(state => {
       const radios = new Set(state.radios)
@@ -27,6 +31,7 @@ class RadioGroup extends React.PureComponent {
       return { radios }
     })
   }
+
   removeRadio = id => {
     this.setState(state => {
       const radios = new Set(state.radios)
@@ -34,6 +39,7 @@ class RadioGroup extends React.PureComponent {
       return { radios }
     })
   }
+
   getSiblingId(position) {
     const { selected } = this.props
     const radios = [...this.state.radios]
@@ -63,18 +69,21 @@ class RadioGroup extends React.PureComponent {
     // default: select the first item if available
     return radios[0] === undefined ? null : radios[0]
   }
+
   selectPrev = () => {
     const id = this.getSiblingId(-1)
     if (id !== null) {
       this.props.onChange(id)
     }
   }
+
   selectNext = () => {
     const id = this.getSiblingId(1)
     if (id !== null) {
       this.props.onChange(id)
     }
   }
+
   render() {
     const { radios } = this.state
     const { children, selected } = this.props

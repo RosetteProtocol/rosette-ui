@@ -117,7 +117,9 @@ function TabsFullWidth({ items, selected, onChange }) {
               css={`
                 transition: transform 150ms ease-in-out;
                 transform: rotate3d(0, 0, 1, ${opened ? 180 : 0}deg);
-                color: ${dropdownDisabled ? theme.disabled : theme.surfaceIcon};
+                color: ${dropdownDisabled
+                  ? theme.disabled.alpha(0.5)
+                  : theme.surfaceIcon};
               `}
             />
           </div>

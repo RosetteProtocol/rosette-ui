@@ -6,7 +6,7 @@ import { GU, BIG_RADIUS, textStyle } from '../../style'
 function getModeStyles(theme, mode) {
   if (mode === 'warning') {
     return {
-      background: theme.warningSurface,
+      background: theme.warningSurface.alpha(0.1),
       borderColor: theme.warning,
       color: theme.warningSurfaceContent,
       titleColor: theme.warningSurfaceContent,
@@ -14,7 +14,7 @@ function getModeStyles(theme, mode) {
   }
   if (mode === 'error') {
     return {
-      background: theme.negativeSurface,
+      background: theme.negativeSurface.alpha(0.1),
       borderColor: theme.negative,
       color: theme.negativeSurfaceContent,
       titleColor: theme.negativeSurfaceContent,
@@ -22,14 +22,14 @@ function getModeStyles(theme, mode) {
   }
   if (mode === 'description') {
     return {
-      background: theme.infoSurface,
-      borderColor: theme.info,
-      color: theme.surfaceContent,
-      titleColor: theme.surfaceContentSecondary,
+      background: theme.helpSurface,
+      borderColor: theme.help,
+      color: theme.helpContent,
+      titleColor: theme.helpContent,
     }
   }
   return {
-    background: theme.infoSurface,
+    background: theme.infoSurface.alpha(0.1),
     borderColor: theme.info,
     color: theme.infoSurfaceContent,
     titleColor: theme.infoSurfaceContent,

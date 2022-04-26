@@ -2,14 +2,13 @@ import React, { useContext, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { color, warnOnce } from '../utils'
 import dark from './theme-dark'
-import light from './theme-light'
 
 // Every theme has a name and an appearance.
-// The appearance can be either “dark” or “light”.
-const APPEARANCES = ['dark', 'light']
+// The appearance can be only “dark”.
+const APPEARANCES = ['dark']
 
-const EMBEDDED_THEMES = { dark, light }
-const THEME_DEFAULT = 'light'
+const EMBEDDED_THEMES = { dark }
+const THEME_DEFAULT = 'dark'
 
 const RESERVED_KEYS = ['_appearance', '_name']
 const DEPRECATED_COLORS = new Map([
@@ -34,8 +33,7 @@ function getTheme(theme) {
     return EMBEDDED_THEMES[theme]
   }
 
-  const baseTheme =
-    EMBEDDED_THEMES[theme._appearance === 'dark' ? 'dark' : 'light']
+  const baseTheme = EMBEDDED_THEMES.dark
 
   return { ...baseTheme, ...theme }
 }

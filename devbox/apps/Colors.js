@@ -1,7 +1,6 @@
 import React from 'react'
 import { useTheme, useLayout, GU } from '@1hive/1hive-ui'
 import themeDark from '../../src/theme/theme-dark'
-import themeLight from '../../src/theme/theme-light'
 
 const groups = [
   ['Base', 'background'],
@@ -112,13 +111,6 @@ export default function() {
           justify-content: space-between;
         `}
       >
-        <ThemeList
-          name="Light theme"
-          theme={themeLight}
-          css={`
-            margin-right: ${3 * GU}px;
-          `}
-        />
         <ThemeList name="Dark theme" theme={themeDark} />
       </div>
     </>

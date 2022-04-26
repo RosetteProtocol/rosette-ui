@@ -43,7 +43,9 @@ function ListView({
               border-bottom: ${Number(index !== entries.length - 1)}px solid
                 ${theme.border};
               transition: background 150ms ease-in-out;
-              background: ${entry.selected ? theme.surfaceSelected : 'none'};
+              background: ${entry.selected
+                ? theme.surfaceSelected.alpha(0.1)
+                : 'none'};
             `}
           >
             <OpenedSurfaceBorder opened={entry.index === opened} />

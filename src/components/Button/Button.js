@@ -87,24 +87,18 @@ function sizeStyles(size, wide, displayIcon, displayLabel) {
 function modeStyles(theme, mode, disabled) {
   if (disabled) {
     return {
-      background: theme.disabled,
+      background: theme.surface.alpha(0.5),
       color: theme.disabledContent,
       iconColor: theme.disabledContent,
-      border: `1px solid ${theme.disabledBorder}`,
+      border: `3px solid ${theme.disabledBorder}`,
     }
   }
   if (mode === 'strong') {
     return {
-      background: `
-        linear-gradient(
-          45deg,
-          ${theme.accentStart} 0%,
-          ${theme.accentEnd} 100%
-        )
-      `,
+      background: theme.surface.alpha(0.5),
       color: theme.accentContent.alpha(0.8),
       iconColor: theme.accentContent.alpha(0.8),
-      border: '0',
+      border: '3px solid',
     }
   }
 
@@ -127,7 +121,7 @@ function modeStyles(theme, mode, disabled) {
   }
 
   return {
-    background: theme.surfaceInteractive,
+    background: theme.surfaceInteractive.alpha(0.5),
     color: theme.surfaceContent,
     iconColor: theme.surfaceIcon,
     border: `1px solid ${theme.border}`,

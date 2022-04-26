@@ -30,9 +30,9 @@ function BackButton({ label, ...props }) {
         padding: 0 ${horizontalPadding}px 0 ${horizontalPadding - 4}px;
         border-right: 1px solid ${theme.border};
         color: ${theme.surfaceContent};
-        background: ${theme.surfaceInteractive};
+        background: ${theme.surfaceInteractive.alpha(0.5)};
         &:active {
-          background: ${theme.surfaceHighlight};
+          background: ${theme.surfaceHighlight.alpha(0.5)};
         }
       `}
       {...props}
@@ -41,7 +41,7 @@ function BackButton({ label, ...props }) {
         css={`
           position: relative;
           top: 2px;
-          color: ${theme.accent};
+          color: ${theme.content};
         `}
       >
         <IconArrowLeft />

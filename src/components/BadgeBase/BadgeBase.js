@@ -42,13 +42,16 @@ const BadgeBase = React.memo(function BadgeBase({
           overflow: hidden;
           color: ${theme.badgeContent};
           height: ${3 * GU}px;
-          background: ${compact ? 'transparent' : theme.badge};
+          background: ${compact ? 'transparent' : theme.badge.alpha(0.5)};
           ${insideDropDownMenu ? 'cursor: pointer' : ''};
 
           &:active {
-            ${!disabled && compact ? `background: ${theme.badgePressed}` : ''};
+            ${!disabled && compact
+              ? `background: ${theme.badgePressed.alpha(0.5)}`
+              : ''};
           }
           border-radius: ${RADIUS}px;
+          border: 1px solid ${theme.border};
         `}
       >
         <div

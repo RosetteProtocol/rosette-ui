@@ -70,7 +70,7 @@ function NormalizedHtml({ children, ...props }) {
         a > code,
         p > code {
           padding: ${0.5 * GU}px ${0.75 * GU}px;
-          background: ${theme.surfaceHighlight};
+          background: ${theme.surfaceHighlight.alpha(0.5)};
           border-radius: ${RADIUS}px;
         }
         pre {

@@ -187,10 +187,10 @@ const DropDown = React.memo(function DropDown({
           padding-right: ${1.5 * GU}px;
           width: ${width || (wide ? '100%' : 'auto')};
           min-width: ${wide ? 'auto' : `${placeholderMinWidth}px`};
-          background: ${disabled ? theme.disabled : theme.surface};
+          background: ${disabled ? theme.disabled.alpha(0.5) : theme.surface};
           color: ${disabled ? theme.disabledContent : theme.surfaceContent};
-          border: ${disabled ? 0 : 1}px solid
-            ${closedWithChanges ? theme.selected : theme.border};
+          border: ${disabled ? 0 : closedWithChanges ? 3 : 1}px solid
+            ${closedWithChanges ? theme.focus : theme.border};
           ${textStyle('body2')};
           ${disabled
             ? 'font-weight: 600;'
@@ -379,7 +379,7 @@ const Item = React.memo(function Item({
             selected === index
               ? `
               border-left: 2px solid ${theme.accent};
-              background: ${theme.surfaceSelected};
+              background: ${theme.surfaceSelected.alpha(0.1)};
             `
               : ''
           }

@@ -169,7 +169,7 @@ const Item = React.forwardRef(function Item(
           ${selected
             ? `
                 outline: 2px solid ${theme.accent};
-                background: ${theme.surfaceHighlight};
+                background: ${theme.surfaceHighlight.alpha(0.5)};
                 border-left: 3px solid ${theme.accent};
               `
             : ''};

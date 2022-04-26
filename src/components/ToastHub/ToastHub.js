@@ -197,9 +197,17 @@ const ToastList = React.memo(function ToastList({
             <animated.div
               style={props}
               css={`
-                box-sizing: border-box;
-                position: relative;
-                width: ${below('medium') ? '100%' : '42ch'};
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                height: ${6 * GU}px;
+                margin-top: ${top ? '0' : `${1.25 * GU}px`};
+                margin-bottom: ${top ? `${1.25 * GU}px` : '0'};
+                padding: 0 ${2.5 * GU}px;
+                ${textStyle('body3')};
+                color: ${theme.floatingContent};
+                background: ${theme.floating.alpha(0.95)};
+                border-radius: ${MEDIUM_RADIUS}px;
               `}
             >
               <div

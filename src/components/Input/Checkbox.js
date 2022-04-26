@@ -20,6 +20,7 @@ class Checkbox extends React.PureComponent {
     theme: PropTypes.object,
     variant: PropTypes.oneOf(['checkbox', 'radio']),
   }
+
   static defaultProps = {
     checked: false,
     disabled: false,
@@ -28,6 +29,7 @@ class Checkbox extends React.PureComponent {
     tabIndex: '0',
     variant: 'checkbox',
   }
+
   _element = React.createRef()
   getAriaChecked() {
     const { checked, indeterminate } = this.props
@@ -35,13 +37,16 @@ class Checkbox extends React.PureComponent {
     if (checked) return 'true'
     return 'false'
   }
+
   handleClick = () => {
     const { onChange, checked, indeterminate } = this.props
     onChange(indeterminate ? false : !checked)
   }
+
   focus = () => {
     this._element.current.focus()
   }
+
   renderCheck(visible, Icon) {
     const { disabled, theme } = this.props
     return (
@@ -69,12 +74,15 @@ class Checkbox extends React.PureComponent {
               transform: progress.interpolate(v => `scale(${v})`),
             }}
           >
-            <Icon color={disabled ? theme.selectedDisabled : theme.selected} />
+            <Icon
+              color={disabled ? theme.selectedDisabledCheck : theme.selected}
+            />
           </animated.span>
         )}
       </Spring>
     )
   }
+
   render() {
     const {
       checked,
@@ -104,7 +112,7 @@ class Checkbox extends React.PureComponent {
               height: ${SIZE}px;
               margin: ${0.5 * GU}px;
               padding: 0;
-              background: ${disabled ? theme.controlDisabled : theme.control};
+              background: ${disabled ? theme.selectedDisabled : theme.control};
               border: 1px solid ${theme.controlBorder};
               border-radius: ${variant === 'radio'
                 ? '50%'

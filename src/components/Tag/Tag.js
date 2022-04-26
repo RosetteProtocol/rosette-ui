@@ -19,32 +19,32 @@ function useMode(mode) {
 
   if (mode === MODE_IDENTIFIER) {
     return {
-      background: theme.tagIdentifier,
-      color: theme.tagIdentifierContent,
+      background: theme.tagIdentifier.alpha(0.1),
+      color: theme.tagIdentifier,
       size: SIZE_NORMAL,
     }
   }
 
   if (mode === MODE_NEW) {
     return {
-      background: theme.tagNew,
-      color: theme.tagNewContent,
+      background: theme.tagNew.alpha(0.1),
+      color: theme.tagNew,
       size: SIZE_NORMAL,
     }
   }
 
   if (mode === MODE_ACTIVITY) {
     return {
-      background: theme.tagActivity,
-      color: theme.tagActivityContent,
+      background: theme.tagActivity.alpha(0.1),
+      color: theme.tagActivity,
       size: SIZE_SMALL,
     }
   }
 
   // mode === MODE_INDICATOR (default)
   return {
-    background: theme.tagIndicator,
-    color: theme.tagIndicatorContent,
+    background: theme.tagIndicator.alpha(0.1),
+    color: theme.tagIndicator,
     size: SIZE_NORMAL,
   }
 }

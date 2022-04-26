@@ -32,6 +32,7 @@ class RadioButton extends React.PureComponent {
     selectPrev: PropTypes.func,
     tabIndex: PropTypes.string,
   }
+
   static defaultProps = {
     addRadio: noop,
     checked: false,
@@ -42,6 +43,7 @@ class RadioButton extends React.PureComponent {
     selectNext: noop,
     selectPrev: noop,
   }
+
   _element = React.createRef()
   componentDidMount() {
     const { addRadio, id } = this.props
@@ -49,18 +51,21 @@ class RadioButton extends React.PureComponent {
       addRadio(id)
     }
   }
+
   componentWillUnmount() {
     const { removeRadio, id } = this.props
     if (removeRadio && id !== null) {
       removeRadio(id)
     }
   }
+
   componentDidUpdate(prevProps) {
     const { checked } = this.props
     if (checked && !prevProps.checked) {
       this._element.current.focus()
     }
   }
+
   handleKeyDown = event => {
     const { selectPrev, selectNext } = this.props
     if (KEYS_PREV.includes(event.key)) {
@@ -72,12 +77,14 @@ class RadioButton extends React.PureComponent {
       event.preventDefault()
     }
   }
+
   handleChange = () => {
     const { onChange, id } = this.props
     if (onChange) {
       onChange(id)
     }
   }
+
   render() {
     const { checked, disabled, id, onChange, tabIndex, ...props } = this.props
     return (
