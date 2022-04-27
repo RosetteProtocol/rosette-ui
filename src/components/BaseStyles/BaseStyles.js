@@ -11,7 +11,9 @@ import overpassRegularWoff2 from './assets/overpass/overpass-regular.woff2'
 import overpassSemiBoldWoff2 from './assets/overpass/overpass-semibold.woff2'
 import overpassMonoLightWoff2 from './assets/overpass-mono/overpass-mono-light.woff2'
 
-import background from './background.svg'
+import background from './assets/background.png'
+// import backgroundTablet from './assets/tablet.png'
+// import backgroundMobile from './assets/mobile.png'
 
 const DEFAULT_FONTS = {
   '400': { url: overpassLightWoff2, format: 'woff2' },
@@ -107,6 +109,7 @@ const GlobalStyle = createGlobalStyle`
   body, ul, p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
+    color: ${p => p.theme.content};
   }
   button, select, input, textarea, h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
@@ -115,7 +118,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: inherit;
   }
   a, button, select, input, textarea {
-    color: inherit;
+    color: ${p => p.theme.content};
   }
   strong, b {
     font-weight: 600;

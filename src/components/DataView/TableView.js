@@ -370,7 +370,7 @@ function EntryExpansion({
                 position: relative;
                 padding: 0;
                 box-shadow: inset 0 6px 4px -4px rgba(0, 0, 0, 0.16);
-                background: ${theme.surfaceUnder};
+                background: ${theme.surfaceUnder.alpha(0.1)};
               }
             `}
           >

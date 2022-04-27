@@ -26,7 +26,7 @@ const ArrowButton = props => {
         font-size: 9px;
         padding: 5px 4px 0 4px;
         margin-top: -4px;
-        color: ${theme.hint};
+        color: ${theme.border};
 
         &:hover {
           color: inherit;
@@ -46,11 +46,14 @@ const SelectorWrapper = styled.div`
   span {
     ${({ small, theme }) => css`
       ${textStyle(small ? 'label2' : 'body2')};
-      ${small &&
-        css`
-          color: ${theme.hint};
-          font-weight: 600;
-        `}
+      ${small
+        ? css`
+            color: ${theme.border};
+          `
+        : css`
+            color: ${theme.content};
+            font-weight: 600;
+          `}
     `}
   }
 `

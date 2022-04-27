@@ -96,35 +96,24 @@ function modeStyles(theme, mode, disabled) {
   if (mode === 'strong') {
     return {
       background: theme.surface.alpha(0.5),
-      color: theme.accentContent.alpha(0.8),
-      iconColor: theme.accentContent.alpha(0.8),
-      border: '3px solid',
+      color: theme.content,
+      iconColor: theme.content,
+      border: '3px solid #f86e38',
     }
   }
 
-  if (mode === 'positive') {
+  if (mode === 'normal') {
     return {
-      background: theme.positive,
-      color: theme.positiveContent,
-      iconColor: theme.positiveContent,
-      border: '0',
-    }
-  }
-
-  if (mode === 'negative') {
-    return {
-      background: theme.negative,
-      color: theme.negativeContent,
-      iconColor: theme.negativeContent,
-      border: '0',
+      background: theme.surface.alpha(0.5),
+      color: theme.content,
+      iconColor: theme.content,
+      border: `3px solid ${theme.borderSecondary}`,
     }
   }
 
   return {
-    background: theme.surfaceInteractive.alpha(0.5),
-    color: theme.surfaceContent,
-    iconColor: theme.surfaceIcon,
-    border: `1px solid ${theme.border}`,
+    color: theme.accent,
+    iconColor: theme.accent,
   }
 }
 

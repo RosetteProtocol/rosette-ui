@@ -26,7 +26,7 @@ const Labels = forwardRef(function Labels(
           align-items: center;
           padding: 7px 6px;
           border: ${INPUT_BORDER}px solid
-            ${hasSetDates ? theme.accent : theme.border};
+            ${hasSetDates ? theme.content : theme.border};
           border-radius: ${MEDIUM_RADIUS}px;
           background: ${theme.surface};
           overflow: hidden;
@@ -50,7 +50,7 @@ const Labels = forwardRef(function Labels(
         >
           <div
             css={`
-              color: ${hasNoStart ? theme.hint : 'inherit'};
+              color: ${hasNoStart ? theme.border : 'inherit'};
               text-align: center;
               ${textStyle(hasNoStart ? 'body2' : 'body3')}
             `}
@@ -59,7 +59,7 @@ const Labels = forwardRef(function Labels(
           </div>
           <div
             css={`
-              color: ${theme.hint.alpha(0.3)};
+              color: ${theme.border.alpha(0.3)};
               font-size: 13px;
             `}
           >
@@ -67,7 +67,7 @@ const Labels = forwardRef(function Labels(
           </div>
           <div
             css={`
-              color: ${hasNoEnd ? theme.hint : 'inherit'};
+              color: ${hasNoEnd ? theme.border : 'inherit'};
               text-align: center;
               ${textStyle(hasNoEnd ? 'body2' : 'body3')}
             `}
@@ -83,7 +83,7 @@ const Labels = forwardRef(function Labels(
         >
           <IconCalendar
             css={`
-              color: ${enabled ? theme.accent : theme.surfaceIcon};
+              color: ${theme.content};
             `}
           />
         </div>

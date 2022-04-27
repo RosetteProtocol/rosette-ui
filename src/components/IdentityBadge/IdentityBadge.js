@@ -19,6 +19,7 @@ const IdentityBadge = React.memo(function IdentityBadge({
   popoverAction,
   popoverTitle,
   shorten,
+  light,
 
   // Deprecated
   customLabel,
@@ -81,6 +82,7 @@ const IdentityBadge = React.memo(function IdentityBadge({
         ${!label && address ? textStyle('address1') : ''}
         ${labelStyle}
       `}
+      light={light}
       onClick={address ? handleOpen : undefined}
       title={address}
       {...props}
@@ -117,6 +119,7 @@ IdentityBadge.propTypes = {
   popoverAction: BadgePopoverActionType,
   popoverTitle: PropTypes.node,
   shorten: PropTypes.bool,
+  light: PropTypes.bool,
 
   // Deprecated
   customLabel: PropTypes.string,

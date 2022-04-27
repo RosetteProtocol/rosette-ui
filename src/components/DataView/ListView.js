@@ -186,7 +186,7 @@ function EntryExpansion({ expansion, opened, rowHeight }) {
           <animated.div
             css={`
               overflow: hidden;
-              background: ${theme.surfaceUnder};
+              background: ${theme.surfaceUnder.alpha(0.1)};
               margin-left: ${-6.5 * GU}px;
               margin-right: ${-3 * GU}px;
               padding-left: ${6.5 * GU}px;

@@ -18,7 +18,7 @@ function MonthDay({
   ...props
 }) {
   const theme = useTheme()
-  const dimmedSelectedColor = theme.selected.alpha(0.09)
+  const dimmedSelectedColor = theme.surfaceSelected.alpha(0.1)
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -90,14 +90,14 @@ function MonthDay({
 
         ${today &&
           css`
-            color: ${theme.selected};
+            color: ${theme.content};
             font-weight: 600;
           `}
 
         ${weekDay &&
           css`
             pointer-events: none;
-            color: ${theme.contentSecondary};
+            color: ${theme.border};
             text-transform: uppercase;
           `}
 
@@ -123,7 +123,7 @@ function MonthDay({
             position: absolute;
             bottom: 1px;
             font-size: 9px;
-            color: ${selected ? theme.surface : theme.selected};
+            color: ${selected ? theme.surface : theme.border};
           `}
         >
           ●

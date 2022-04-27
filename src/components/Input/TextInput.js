@@ -53,12 +53,12 @@ const TextInput = React.forwardRef(
           }
 
           &:read-only {
-            color: ${theme.hint};
+            color: ${theme.contentSecondary};
             border-color: ${theme.border};
           }
 
           &::placeholder {
-            color: ${theme.hint};
+            color: ${theme.contentSecondary};
             opacity: 1;
           }
 

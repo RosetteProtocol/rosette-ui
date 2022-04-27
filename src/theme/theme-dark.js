@@ -4,6 +4,7 @@ export default {
 
   border: '#A2957A',
   borderDark: '#8A8069',
+  borderSecondary: '#CFC7B5',
   overlay: '#0E0D0D',
   content: '#FDE9BC',
   contentSecondary: '#D0BF9B',
@@ -12,7 +13,7 @@ export default {
   surfaceContent: '#FDE9BC',
   surfaceContentSecondary: '#D0BF9B',
   surfaceIcon: '#D0BF9B',
-  surfaceUnder: '#D0BF9B',
+  surfaceUnder: '#FEF4DE',
   surfaceOpened: '#A2957A',
   surfaceSelected: '#FEF4DE',
   surfaceHighlight: '#0E0D0D',
@@ -53,8 +54,8 @@ export default {
 
   tagIdentifier: '#564090',
   tagNew: '#8DCE3A',
-  tagIndicator: '#F5A623',
-  tagActivity: '#7C5FE0',
+  tagIndicator: '#7C5FE0',
+  tagActivity: '#CE468B',
 
   hint: '#7C5FE0',
   link: '#A2957A',
@@ -82,7 +83,7 @@ export default {
   accentContent: '#FDE9BC',
 
   floating: '#FDE9BC',
-  floatingContent: '#191717',
+  floatingContent: '#A2957A',
 
   green: '#8DCE3A',
   yellow: '#F5A623',

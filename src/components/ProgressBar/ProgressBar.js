@@ -53,7 +53,7 @@ const ProgressBar = React.memo(({ animate, color, progress, value }) => {
       css={`
         width: 100%;
         height: ${BAR_HEIGHT}px;
-        background: ${theme.surfaceUnder};
+        background: ${theme.contentSecondary};
         border-radius: ${RADIUS}px;
         overflow: hidden;
       `}

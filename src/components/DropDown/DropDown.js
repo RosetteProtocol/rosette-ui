@@ -209,11 +209,7 @@ const DropDown = React.memo(function DropDown({
           size="tiny"
           css={`
             margin-left: ${1.5 * GU}px;
-            color: ${disabled
-              ? theme.disabledIcon
-              : closedWithChanges
-              ? theme.accent
-              : theme.surfaceIcon};
+            color: ${disabled ? theme.disabledIcon : theme.surfaceIcon};
           `}
         />
       </ButtonBase>

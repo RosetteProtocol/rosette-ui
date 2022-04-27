@@ -147,7 +147,7 @@ class Slider extends React.Component {
               <Bars>
                 <Bar
                   css={`
-                    background: ${theme.surfaceUnder};
+                    background: ${theme.contentSecondary};
                   `}
                 />
                 <Bar
