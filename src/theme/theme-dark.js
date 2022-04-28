@@ -33,7 +33,7 @@ export default {
   infoSurfaceContent: '#7C5FE0',
 
   help: '#FDE9BC',
-  helpIcon: '#7C5FE0',
+  helpIcon: '#A891FA',
   helpContent: '#191717',
   helpSurface: '#FDE9BC',
   helpSurfaceContent: '#FDE9BC',
@@ -58,7 +58,7 @@ export default {
   tagActivity: '#CE468B',
 
   hint: '#7C5FE0',
-  link: '#A2957A',
+  link: '#886CEA',
   focus: '#FFFCDA',
   selected: '#7C5FE0',
   selectedContent: '#FDE9BC',
@@ -83,7 +83,7 @@ export default {
   accentContent: '#FDE9BC',
 
   floating: '#FDE9BC',
-  floatingContent: '#A2957A',
+  floatingContent: '#191717',
 
   green: '#8DCE3A',
   yellow: '#F5A623',

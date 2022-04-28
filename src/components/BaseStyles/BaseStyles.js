@@ -6,23 +6,20 @@ import { DEFAULT_FONT_FAMILY, MONOSPACE_FONT_FAMILY } from '../../utils'
 import { textStyle } from '../../style'
 import { useTheme } from '../../theme'
 
-import overpassLightWoff2 from './assets/overpass/overpass-light.woff2'
-import overpassRegularWoff2 from './assets/overpass/overpass-regular.woff2'
-import overpassSemiBoldWoff2 from './assets/overpass/overpass-semibold.woff2'
-import overpassMonoLightWoff2 from './assets/overpass-mono/overpass-mono-light.woff2'
+import consolasBoldWoff2 from './assets/consolas/consolas-bold.woff2'
+import consolasRegularWoff2 from './assets/consolas/consolas-regular.woff2'
+import monserratRegularWoff2 from './assets/monserrat/monserrat-regular.woff2'
 
 import background from './assets/background.png'
-// import backgroundTablet from './assets/tablet.png'
-// import backgroundMobile from './assets/mobile.png'
 
 const DEFAULT_FONTS = {
-  '400': { url: overpassLightWoff2, format: 'woff2' },
-  '600': { url: overpassRegularWoff2, format: 'woff2' },
-  '800': { url: overpassSemiBoldWoff2, format: 'woff2' },
+  '400': { url: consolasRegularWoff2, format: 'woff2' },
+  '600': { url: consolasRegularWoff2, format: 'woff2' },
+  '800': { url: consolasBoldWoff2, format: 'woff2' },
 }
 
 const MONOSPACE_FONTS = {
-  '400': { url: overpassMonoLightWoff2, format: 'woff2' },
+  '400': { url: monserratRegularWoff2, format: 'woff2' },
 }
 
 function fontSrc(publicUrl, { url, format }) {
@@ -64,6 +61,7 @@ function fontFaceDeclarations({ fontFamily, publicUrl }) {
 
 const BaseStyles = React.memo(function BaseStyles(props) {
   const theme = useTheme()
+
   return (
     <GlobalStyle
       {...props}
@@ -109,7 +107,6 @@ const GlobalStyle = createGlobalStyle`
   body, ul, p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
-    color: ${p => p.theme.content};
   }
   button, select, input, textarea, h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
@@ -117,7 +114,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: inherit;
     line-height: inherit;
   }
-  a, button, select, input, textarea {
+  a, button, select, input, textarea, p, h1, h2, h3, h4, h5, h6 {
     color: ${p => p.theme.content};
   }
   strong, b {

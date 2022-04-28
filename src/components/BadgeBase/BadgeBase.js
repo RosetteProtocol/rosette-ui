@@ -15,7 +15,6 @@ const BadgeBase = React.memo(function BadgeBase({
   icon,
   label,
   labelStyle,
-  light,
   onClick,
   style,
   title,
@@ -52,7 +51,7 @@ const BadgeBase = React.memo(function BadgeBase({
               : ''};
           }
           border-radius: ${RADIUS}px;
-          ${light ? '' : `border: 1px solid ${theme.border};`}
+          ${compact ? '' : `border: 1px solid ${theme.border};`}
         `}
       >
         <div
@@ -106,7 +105,6 @@ BadgeBase.propTypes = {
   icon: PropTypes.node,
   label: PropTypes.node.isRequired,
   labelStyle: PropTypes.string,
-  light: PropTypes.bool,
   onClick: PropTypes.func,
   style: PropTypes.object,
   title: PropTypes.string,

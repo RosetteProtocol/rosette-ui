@@ -2,8 +2,8 @@ import { warnOnce } from './environment'
 
 // Using generic names so we can change the font if needed, while using these
 // generic names in our components.
-export const DEFAULT_FONT_FAMILY = 'aragon-ui'
-export const MONOSPACE_FONT_FAMILY = 'aragon-ui-monospace'
+export const DEFAULT_FONT_FAMILY = 'rosette-ui'
+export const MONOSPACE_FONT_FAMILY = 'rosette-ui-monospace'
 
 export const monospace = () => `
   font-family: ${MONOSPACE_FONT_FAMILY}, monospace;

@@ -11,19 +11,19 @@ import ButtonBase from '../ButtonBase/ButtonBase'
 // See src/icons/icon-size.js for the corresponding icon sizes.
 const SIZE_STYLES = {
   medium: {
-    textStyleName: 'body2',
-    height: 5 * GU,
+    textStyleName: 'title4',
+    height: 8 * GU,
     padding: 3 * GU,
     iconPadding: 2 * GU,
-    minWidth: 14.5 * GU,
+    minWidth: 18.25 * GU,
     middleSpace: 1 * GU,
   },
   small: {
     textStyleName: 'body2',
-    height: 4 * GU,
+    height: 5 * GU,
     padding: 2 * GU,
     iconPadding: 1.5 * GU,
-    minWidth: 13 * GU,
+    minWidth: 16 * GU,
     middleSpace: 1 * GU,
   },
   mini: {
@@ -84,21 +84,24 @@ function sizeStyles(size, wide, displayIcon, displayLabel) {
 }
 
 // CSS styles related to the current mode
-function modeStyles(theme, mode, disabled) {
+function modeStyles(theme, layoutName, mode, disabled) {
+  const borderSize = layoutName === 'medium' ? '2' : '3'
+
   if (disabled) {
     return {
       background: theme.surface.alpha(0.5),
       color: theme.disabledContent,
       iconColor: theme.disabledContent,
-      border: `3px solid ${theme.disabledBorder}`,
+      border: `${borderSize}px solid ${theme.disabledBorder}`,
     }
   }
   if (mode === 'strong') {
     return {
-      background: theme.surface.alpha(0.5),
+      background: `linear-gradient(${theme.surface} 0 0) padding-box,
+        linear-gradient(90deg, #FAC758 -0.11%, #FFA254 32.96%, #F86E38 66.04%, #F7513E 100.11%) border-box`,
       color: theme.content,
       iconColor: theme.content,
-      border: '3px solid #f86e38',
+      border: `${borderSize}px solid transparent`,
     }
   }
 
@@ -107,7 +110,7 @@ function modeStyles(theme, mode, disabled) {
       background: theme.surface.alpha(0.5),
       color: theme.content,
       iconColor: theme.content,
-      border: `3px solid ${theme.borderSecondary}`,
+      border: `${borderSize}px solid ${theme.borderSecondary}`,
     }
   }
 
@@ -188,8 +191,8 @@ function Button({
 
   // Mode styles
   const { background, color, iconColor, border } = useMemo(
-    () => modeStyles(theme, mode, disabled),
-    [mode, theme, disabled]
+    () => modeStyles(theme, layoutName, mode, disabled),
+    [mode, theme, disabled, layoutName]
   )
 
   // Size styles
@@ -217,7 +220,7 @@ function Button({
   return (
     <ButtonBase
       ref={innerRef}
-      focusRingSpacing={border === '0' ? 0 : 1}
+      focusRingSpacing={layoutName === 'medium' ? 6 : 7}
       focusRingRadius={BIG_RADIUS}
       disabled={disabled}
       {...props}
@@ -242,6 +245,11 @@ function Button({
         &:active {
           transform: ${disabled ? 'none' : 'translateY(1px)'};
           box-shadow: ${disabled ? 'none' : '0px 1px 2px rgba(0, 0, 0, 0.08)'};
+        }
+        &:hover {
+          background-color: ${mode === 'normal'
+            ? theme.surfaceUnder.alpha(0.1)
+            : ''};
         }
       `}
     >

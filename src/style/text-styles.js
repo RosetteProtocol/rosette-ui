@@ -25,11 +25,13 @@ const TEXT_STYLES = {
     size: 18,
     weight: 400,
     lineHeight: 1.5,
+    monospace: true,
   },
   body2: {
-    size: 16,
+    size: 14,
     weight: 400,
     lineHeight: 1.5,
+    monospace: true,
   },
   body3: {
     size: 14,
@@ -63,13 +65,11 @@ const TEXT_STYLES = {
     size: 16,
     weight: 400,
     lineHeight: 1.5,
-    monospace: true,
   },
   address2: {
     size: 14,
     weight: 400,
     lineHeight: 1.5,
-    monospace: true,
   },
 }
 

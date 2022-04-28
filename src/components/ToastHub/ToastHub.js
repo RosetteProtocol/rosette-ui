@@ -197,17 +197,9 @@ const ToastList = React.memo(function ToastList({
             <animated.div
               style={props}
               css={`
-                display: flex;
-                align-items: center;
-                overflow: hidden;
-                height: ${6 * GU}px;
-                margin-top: ${top ? '0' : `${1.25 * GU}px`};
-                margin-bottom: ${top ? `${1.25 * GU}px` : '0'};
-                padding: 0 ${2.5 * GU}px;
-                ${textStyle('body3')};
-                color: ${theme.floatingContent};
-                background: ${theme.floating.alpha(0.95)};
-                border-radius: ${MEDIUM_RADIUS}px;
+                box-sizing: border-box;
+                position: relative;
+                width: ${below('medium') ? '100%' : '42ch'};
               `}
             >
               <div
@@ -236,13 +228,19 @@ const ToastList = React.memo(function ToastList({
                       height: 5px;
                       background-image: linear-gradient(
                         130deg,
-                        #00b4e6,
-                        #00f0e0
+                        #a891fa,
+                        #7c5fe0
                       );
                     `}
                   />
                 )}
-                <p>{item.msg}</p>
+                <p
+                  css={`
+                    color: ${theme.floatingContent};
+                  `}
+                >
+                  {item.msg}
+                </p>
               </div>
             </animated.div>
           )

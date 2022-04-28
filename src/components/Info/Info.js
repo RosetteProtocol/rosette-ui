@@ -20,6 +20,14 @@ function getModeStyles(theme, mode) {
       titleColor: theme.negativeSurfaceContent,
     }
   }
+  if (mode === 'success') {
+    return {
+      background: theme.positiveSurface.alpha(0.1),
+      borderColor: theme.positive,
+      color: theme.positiveSurfaceContent,
+      titleColor: theme.positiveSurfaceContent,
+    }
+  }
   if (mode === 'description') {
     return {
       background: theme.helpSurface,
@@ -89,7 +97,7 @@ function Info({
 Info.propTypes = {
   children: PropTypes.node,
   title: PropTypes.node,
-  mode: PropTypes.oneOf(['info', 'description', 'warning', 'error']),
+  mode: PropTypes.oneOf(['info', 'description', 'warning', 'error', 'success']),
   color: PropTypes.string,
   titleColor: PropTypes.string,
   background: PropTypes.string,
@@ -106,9 +114,13 @@ function Warning(props) {
 function Error(props) {
   return <Info mode="error" {...props} />
 }
+function Success(props) {
+  return <Info mode="success" {...props} />
+}
 
 Info.Description = Description
 Info.Warning = Warning
 Info.Error = Error
+Info.Success = Success
 
 export default Info

@@ -127,10 +127,10 @@ const BackButton = styled.span`
   padding: ${p => (p.compact ? '0 16px' : '0 20px 0 30px')};
   cursor: pointer;
   svg {
-    color: hsl(179, 76%, 48%);
+    color: ${p => p.theme.content};
   }
   :active svg {
-    color: hsl(179, 76%, 63%);
+    color: ${p => p.theme.content};
   }
   & + ${Label} {
     padding-left: 0;
