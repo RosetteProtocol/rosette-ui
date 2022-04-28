@@ -12,7 +12,7 @@ export default () => (
   >
     <Bar
       primary={<BackButton />}
-      secondary={<Button label="Share" />}
+      secondary={<Button label="Share" size="small" />}
       css={`
         width: 500px;
       `}

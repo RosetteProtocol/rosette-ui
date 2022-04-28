@@ -8,7 +8,9 @@ const text2 = 'Nothing to see here.'
 
 function App() {
   const button = (
-    <Button onClick={() => console.log('Click on button')}>Create</Button>
+    <Button size="small" onClick={() => console.log('Click on button')}>
+      Create
+    </Button>
   )
   const illustration = <img src={emptyStatePng} alt="" height="160" />
   return (

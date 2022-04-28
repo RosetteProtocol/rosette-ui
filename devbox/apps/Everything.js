@@ -124,7 +124,12 @@ function ToastBox() {
   const toast = useToast()
   return (
     <Box heading="Toast">
-      <Button onClick={() => toast('This is a toast')} mode="strong" wide>
+      <Button
+        onClick={() => toast('This is a toast')}
+        mode="strong"
+        size="small"
+        wide
+      >
         Display Toast
       </Button>
     </Box>
@@ -146,7 +151,7 @@ function SyncIndicatorBox() {
 
   return (
     <Box heading="Sync indicator">
-      <Button onClick={handleClick} mode="strong" wide>
+      <Button onClick={handleClick} mode="strong" size="small" wide>
         Display SyncIndicator
       </Button>
       <SyncIndicator visible={visible}></SyncIndicator>
@@ -241,7 +246,10 @@ export default () => {
       />
       <DemoTabs />
       <Cards interactive />
-      <Bar primary={<BackButton />} secondary={<Button label="Button" />} />
+      <Bar
+        primary={<BackButton />}
+        secondary={<Button label="Button" size="small" />}
+      />
       <CardLayout>
         {[...Array(3)].map((_, index) =>
           ['activity', 'indicator', 'identifier', 'new'].map(mode =>
@@ -255,7 +263,10 @@ export default () => {
           )
         )}
       </CardLayout>
-      <Bar primary={<BackButton />} secondary={<Button label="Button" />} />
+      <Bar
+        primary={<BackButton />}
+        secondary={<Button label="Button" size="small" />}
+      />
       <Split
         primary={
           <Box>
@@ -395,7 +406,10 @@ export default () => {
           </React.Fragment>
         }
       />
-      <Bar primary={<BackButton />} secondary={<Button label="Button" />} />
+      <Bar
+        primary={<BackButton />}
+        secondary={<Button label="Button" size="small" />}
+      />
       <div
         css={`
           display: flex;
@@ -406,17 +420,20 @@ export default () => {
         <EmptyStateCard
           text="You seem to not have any content on your wall."
           action={
-            <Button onClick={() => console.log('Click on button')}>
+            <Button size="small" onClick={() => console.log('Click on button')}>
               Create
             </Button>
           }
         />
       </div>
-      <Bar primary={<BackButton />} secondary={<Button label="Button" />} />
+      <Bar
+        primary={<BackButton />}
+        secondary={<Button label="Button" size="small" />}
+      />
       <DataViewExpansion />
       <Bar
         primary={<BackButton />}
-        secondary={<Button label="Button" />}
+        secondary={<Button label="Button" size="small" />}
         css={`
           margin-top: ${3 * GU}px;
         `}
@@ -424,7 +441,7 @@ export default () => {
       <DataViewSelect />
       <Bar
         primary={<BackButton />}
-        secondary={<Button label="Button" />}
+        secondary={<Button label="Button" size="small" />}
         css={`
           margin-top: ${3 * GU}px;
         `}
@@ -441,7 +458,10 @@ export default () => {
           </React.Fragment>
         }
       />
-      <Bar primary={<BackButton />} secondary={<Button label="Button" />} />
+      <Bar
+        primary={<BackButton />}
+        secondary={<Button label="Button" size="small" />}
+      />
       <Split
         primary={<AccordionDemo count={5} header={null} />}
         secondary={<Box css="height: 100%" />}

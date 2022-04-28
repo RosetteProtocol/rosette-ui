@@ -540,7 +540,11 @@ function Amount({ children }) {
   return (
     <div
       css={`
-        color: ${children.startsWith('+') ? theme.success : 'inherit'};
+        color: ${children.startsWith('+')
+          ? theme.success
+          : children.startsWith('-')
+          ? theme.negative
+          : 'inherit'};
       `}
     >
       {children}

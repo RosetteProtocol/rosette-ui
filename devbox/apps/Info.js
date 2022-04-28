@@ -1,7 +1,7 @@
 import React from 'react'
 import { Split, Box, Info, GU } from '@1hive/1hive-ui'
 
-const MODES = ['info', 'warning', 'error', 'description']
+const MODES = ['info', 'warning', 'error', 'success', 'description']
 
 function InfoDemo({ content, title }) {
   return (

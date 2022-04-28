@@ -21,6 +21,12 @@ class App extends React.Component {
             name: 'Ethereum',
           },
           {
+            address: '0x0000000000000000000000000000000000000000',
+            symbol: 'ETH light',
+            name: 'Ethereum',
+            light: true,
+          },
+          {
             address: '0x960b236A07cf122663c4303350609A66A7B288C0',
             symbol: 'ANT',
             name: 'Aragon',
