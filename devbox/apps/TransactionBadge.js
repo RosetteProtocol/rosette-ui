@@ -14,10 +14,6 @@ class App extends React.Component {
           <TransactionBadge transaction={txHash} />
         </div>
         <div>
-          <span>Transaction light</span>
-          <TransactionBadge transaction={txHash} light />
-        </div>
-        <div>
           <span>Unshortened</span>
           <TransactionBadge transaction={txHash} shorten={false} />
         </div>
