@@ -2,6 +2,7 @@ export default {
   _name: 'dark',
   _appearance: 'dark',
 
+  background: '#0E0D0D',
   border: '#A2957A',
   borderDark: '#8A8069',
   borderSecondary: '#CFC7B5',

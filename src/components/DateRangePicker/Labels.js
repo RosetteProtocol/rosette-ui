@@ -50,7 +50,7 @@ const Labels = forwardRef(function Labels(
         >
           <div
             css={`
-              color: ${hasNoStart ? theme.border : 'inherit'};
+              color: ${hasNoStart ? theme.border : theme.content};
               text-align: center;
               ${textStyle(hasNoStart ? 'body2' : 'body3')}
             `}
@@ -67,7 +67,7 @@ const Labels = forwardRef(function Labels(
           </div>
           <div
             css={`
-              color: ${hasNoEnd ? theme.border : 'inherit'};
+              color: ${hasNoEnd ? theme.border : theme.content};
               text-align: center;
               ${textStyle(hasNoEnd ? 'body2' : 'body3')}
             `}

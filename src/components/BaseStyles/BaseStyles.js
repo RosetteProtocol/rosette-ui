@@ -10,8 +10,6 @@ import consolasBoldWoff2 from './assets/consolas/consolas-bold.woff2'
 import consolasRegularWoff2 from './assets/consolas/consolas-regular.woff2'
 import monserratRegularWoff2 from './assets/monserrat/monserrat-regular.woff2'
 
-import background from './assets/background.png'
-
 const DEFAULT_FONTS = {
   '400': { url: consolasRegularWoff2, format: 'woff2' },
   '600': { url: consolasRegularWoff2, format: 'woff2' },
@@ -96,8 +94,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     height: 0;
     min-height: 100vh;
-    background-image: ${p => `url(${p.publicUrl + background})`};
-    background-size: cover;
+    background-image: ${p => `url(${p.publicUrl + p.theme.background})`};
     font-family: ${p => p.fontFamily};
     ${p => p.textStyleCss};
   }
@@ -114,8 +111,8 @@ const GlobalStyle = createGlobalStyle`
     font-weight: inherit;
     line-height: inherit;
   }
-  a, button, select, input, textarea, p, h1, h2, h3, h4, h5, h6 {
-    color: ${p => p.theme.content};
+  a, button, select, input, textarea {
+    color: inherit;
   }
   strong, b {
     font-weight: 600;
