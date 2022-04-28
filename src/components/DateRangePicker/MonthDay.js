@@ -113,6 +113,11 @@ function MonthDay({
       <span
         css={`
           ${textStyle(weekDay ? 'body4' : 'body3')};
+          color: ${selected
+            ? theme.content
+            : today
+            ? theme.accent
+            : theme.content};
         `}
       >
         {children}
@@ -123,7 +128,7 @@ function MonthDay({
             position: absolute;
             bottom: 1px;
             font-size: 9px;
-            color: ${selected ? theme.surface : theme.border};
+            color: ${selected ? theme.selected : theme.accent};
           `}
         >
           ●
