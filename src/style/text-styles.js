@@ -28,13 +28,12 @@ const TEXT_STYLES = {
     monospace: true,
   },
   body2: {
-    size: 14,
+    size: 16,
     weight: 400,
     lineHeight: 1.5,
-    monospace: true,
   },
   body3: {
-    size: 16,
+    size: 14,
     weight: 400,
     lineHeight: 1.5,
   },

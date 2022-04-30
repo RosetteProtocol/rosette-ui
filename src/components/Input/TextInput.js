@@ -10,7 +10,7 @@ const SIZE_STYLES = {
     height: 8 * GU,
   },
   small: {
-    textStyleName: 'body3',
+    textStyleName: 'body2',
     height: 5 * GU,
   },
 }

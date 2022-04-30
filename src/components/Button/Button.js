@@ -19,7 +19,7 @@ const SIZE_STYLES = {
     middleSpace: 1 * GU,
   },
   small: {
-    textStyleName: 'body3',
+    textStyleName: 'body2',
     height: 5 * GU,
     padding: 2 * GU,
     iconPadding: 1.5 * GU,

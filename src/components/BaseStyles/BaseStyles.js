@@ -94,7 +94,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     height: 0;
     min-height: 100vh;
-    background-image: ${p => `url(${p.publicUrl + p.theme.background})`};
+    background: ${p => p.theme.background};
     font-family: ${p => p.fontFamily};
     ${p => p.textStyleCss};
   }

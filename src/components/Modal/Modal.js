@@ -87,6 +87,7 @@ function Modal({
                       overflow: hidden;
                       min-width: ${360 - SPACE_AROUND * 2}px;
                       background: ${theme.surface.alpha(0.5)};
+                      border: 1px solid ${theme.border};
                       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
                     `}
                     style={{
@@ -103,8 +104,8 @@ function Modal({
                         css={`
                           position: absolute;
                           z-index: 2;
-                          top: ${2 * GU}px;
-                          right: ${2 * GU}px;
+                          top: ${2.5 * GU}px;
+                          right: ${2.75 * GU}px;
                           color: ${theme.border};
                           ${textStyle('body4')};
                         `}
