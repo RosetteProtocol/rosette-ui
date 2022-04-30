@@ -26,7 +26,7 @@ const Labels = forwardRef(function Labels(
           align-items: center;
           padding: 7px 6px;
           border: ${INPUT_BORDER}px solid
-            ${hasSetDates ? theme.content : theme.border};
+            ${hasSetDates ? theme.content : theme.borderDark};
           border-radius: ${MEDIUM_RADIUS}px;
           background: ${theme.surface};
           overflow: hidden;

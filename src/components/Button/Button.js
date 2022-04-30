@@ -19,7 +19,7 @@ const SIZE_STYLES = {
     middleSpace: 1 * GU,
   },
   small: {
-    textStyleName: 'body2',
+    textStyleName: 'body3',
     height: 5 * GU,
     padding: 2 * GU,
     iconPadding: 1.5 * GU,
@@ -84,8 +84,13 @@ function sizeStyles(size, wide, displayIcon, displayLabel) {
 }
 
 // CSS styles related to the current mode
-function modeStyles(theme, layoutName, mode, disabled) {
-  const borderSize = layoutName === 'medium' ? '2' : '3'
+function modeStyles(theme, layoutName, mode, disabled, size) {
+  const borderSize =
+    size === 'mini'
+      ? '1'
+      : layoutName === 'medium' || size === 'small'
+      ? '2'
+      : '3'
 
   if (disabled) {
     return {
@@ -111,6 +116,7 @@ function modeStyles(theme, layoutName, mode, disabled) {
       color: theme.content,
       iconColor: theme.content,
       border: `${borderSize}px solid ${theme.borderSecondary}`,
+      backgroundColor: theme.surfaceUnder.alpha(0.1),
     }
   }
 
@@ -190,10 +196,19 @@ function Button({
   const displayLabel = label && (display === 'all' || display === 'label')
 
   // Mode styles
-  const { background, color, iconColor, border } = useMemo(
-    () => modeStyles(theme, layoutName, mode, disabled),
-    [mode, theme, disabled, layoutName]
-  )
+  const {
+    background,
+    backgroundColor,
+    color,
+    iconColor,
+    border,
+  } = useMemo(() => modeStyles(theme, layoutName, mode, disabled, size), [
+    mode,
+    theme,
+    disabled,
+    layoutName,
+    size,
+  ])
 
   // Size styles
   const {
@@ -247,9 +262,7 @@ function Button({
           box-shadow: ${disabled ? 'none' : '0px 1px 2px rgba(0, 0, 0, 0.08)'};
         }
         &:hover {
-          background-color: ${mode === 'normal'
-            ? theme.surfaceUnder.alpha(0.1)
-            : ''};
+          background-color: ${backgroundColor};
         }
       `}
     >
@@ -319,7 +332,7 @@ Button.defaultProps = {
   disabled: false,
   display: 'auto',
   mode: 'normal',
-  size: 'medium',
+  size: 'small',
   wide: false,
 }
 

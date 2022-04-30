@@ -34,7 +34,7 @@ const TEXT_STYLES = {
     monospace: true,
   },
   body3: {
-    size: 14,
+    size: 16,
     weight: 400,
     lineHeight: 1.5,
   },

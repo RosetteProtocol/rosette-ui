@@ -43,7 +43,7 @@ function Field({ children, label, required, ...props }) {
               margin-bottom: ${0.5 * GU}px;
               color: ${theme.surfaceContentSecondary};
               white-space: nowrap;
-              ${textStyle('label2')};
+              ${textStyle('body3')};
               ${unselectable};
             `}
           >

@@ -116,7 +116,7 @@ function DateRangePicker({
         <div
           css={`
             padding: ${2.5 * GU}px ${3 * GU}px ${3 * GU}px;
-            border: 1px solid ${theme.border};
+            border: 1px solid ${theme.borderDark};
             border-radius: ${BIG_RADIUS}px;
             background: ${theme.surface};
           `}

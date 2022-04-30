@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Transition, animated } from 'react-spring/renderprops'
 import { cssPx, noop } from '../../utils'
-import { springs, GU, BIG_RADIUS } from '../../style'
+import { textStyle, springs, GU, BIG_RADIUS } from '../../style'
 import { useTheme } from '../../theme'
 import { useViewport } from '../../providers/Viewport'
 import { IconCross } from '../../icons'
@@ -105,6 +105,8 @@ function Modal({
                           z-index: 2;
                           top: ${2 * GU}px;
                           right: ${2 * GU}px;
+                          color: ${theme.border};
+                          ${textStyle('body4')};
                         `}
                       >
                         <IconCross />

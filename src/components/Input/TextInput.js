@@ -1,13 +1,37 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { useTheme } from '../../theme'
 import { warnOnce } from '../../utils'
 import { textStyle, GU, MEDIUM_RADIUS } from '../../style'
 
+const SIZE_STYLES = {
+  medium: {
+    textStyleName: 'title4',
+    height: 8 * GU,
+  },
+  small: {
+    textStyleName: 'body3',
+    height: 5 * GU,
+  },
+}
+
+// CSS styles related to the current size
+function sizeStyles(size) {
+  const { height, textStyleName } = SIZE_STYLES[size]
+
+  return {
+    height: `${height}px`,
+    textStyleCss: textStyle(textStyleName),
+  }
+}
+
 // Simple text input
 const TextInput = React.forwardRef(
-  ({ autofocus, multiline, type, ...props }, ref) => {
+  ({ autofocus, multiline, type, size, ...props }, ref) => {
     const theme = useTheme()
+
+    // Size styles
+    const { height, textStyleCss } = useMemo(() => sizeStyles(size), [size])
 
     const handleRef = useCallback(
       element => {
@@ -29,14 +53,14 @@ const TextInput = React.forwardRef(
         {...props}
         css={`
           width: ${({ wide }) => (wide ? '100%' : 'auto')};
-          height: ${5 * GU}px;
+          height: ${height};
           padding: 0 ${1.5 * GU}px;
           background: ${theme.surface};
-          border: 1px solid ${theme.border};
+          border: 1px solid ${theme.borderDark};
           color: ${theme.surfaceContent};
           border-radius: ${MEDIUM_RADIUS}px;
           appearance: none;
-          ${textStyle('body3')};
+          ${textStyleCss};
 
           ${multiline
             ? `
@@ -54,11 +78,11 @@ const TextInput = React.forwardRef(
 
           &:read-only {
             color: ${theme.contentSecondary};
-            border-color: ${theme.border};
+            border-color: ${theme.borderDark};
           }
 
           &::placeholder {
-            color: ${theme.contentSecondary};
+            color: ${theme.surfaceOpened};
             opacity: 1;
           }
 
@@ -83,6 +107,7 @@ TextInput.defaultProps = {
   multiline: false,
   required: false,
   type: 'text',
+  size: 'small',
 }
 
 // Text input wrapped to allow adornments
