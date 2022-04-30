@@ -80,13 +80,13 @@ function Modal({
                   <EscapeOutside
                     role="alertdialog"
                     useCapture
-                    background={theme.surface.alpha(0.5)}
+                    background={theme.surface}
                     onEscapeOutside={onClose}
                     css={`
                       position: relative;
                       overflow: hidden;
                       min-width: ${360 - SPACE_AROUND * 2}px;
-                      background: ${theme.surface.alpha(0.5)};
+                      background: ${theme.surface};
                       border: 1px solid ${theme.border};
                       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
                     `}
