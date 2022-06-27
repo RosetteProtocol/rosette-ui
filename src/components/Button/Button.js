@@ -103,10 +103,15 @@ function modeStyles(theme, layoutName, mode, disabled, size) {
   if (mode === 'strong') {
     return {
       background: `linear-gradient(${theme.surface} 0 0) padding-box,
-        linear-gradient(90deg, #FAC758 -0.11%, #FFA254 32.96%, #F86E38 66.04%, #F7513E 100.11%) border-box`,
+      linear-gradient(90deg, #FAC758 12.5%, #FFA254 25%, #F86E38 37.5%, #F7513E 50%, #F86E38 62.5%, #FFA254 75%, #FAC758 87.5%) border-box`,
       color: theme.content,
       iconColor: theme.content,
       border: `${borderSize}px solid transparent`,
+      hoverCss: `background-position: 100%`,
+      additionalCss: `
+          background-size: 250%;
+          transition: background-position 1s ease-in-out;
+      `,
     }
   }
 
@@ -116,7 +121,7 @@ function modeStyles(theme, layoutName, mode, disabled, size) {
       color: theme.content,
       iconColor: theme.content,
       border: `${borderSize}px solid ${theme.borderSecondary}`,
-      backgroundColor: theme.surfaceUnder.alpha(0.1),
+      hoverCss: `background-color: ${theme.surfaceUnder.alpha(0.1)}`,
     }
   }
 
@@ -197,8 +202,9 @@ function Button({
 
   // Mode styles
   const {
+    additionalCss = '',
     background,
-    backgroundColor,
+    hoverCss,
     color,
     iconColor,
     border,
@@ -231,7 +237,7 @@ function Button({
   }
 
   const insideData = { size }
-
+  console.log(theme.surfaceUnder.alpha(0.1))
   return (
     <ButtonBase
       ref={innerRef}
@@ -257,12 +263,14 @@ function Button({
         transition-property: transform, box-shadow;
         transition-duration: 50ms;
         transition-timing-function: ease-in-out;
+        ${additionalCss};
+
         &:active {
           transform: ${disabled ? 'none' : 'translateY(1px)'};
           box-shadow: ${disabled ? 'none' : '0px 1px 2px rgba(0, 0, 0, 0.08)'};
         }
         &:hover {
-          background-color: ${backgroundColor};
+          ${hoverCss};
         }
       `}
     >
