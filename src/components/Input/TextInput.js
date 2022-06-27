@@ -27,7 +27,7 @@ function sizeStyles(size) {
 
 // Simple text input
 const TextInput = React.forwardRef(
-  ({ autofocus, multiline, type, size, ...props }, ref) => {
+  ({ autofocus, error, errorText, multiline, type, size, ...props }, ref) => {
     const theme = useTheme()
 
     // Size styles
@@ -46,57 +46,73 @@ const TextInput = React.forwardRef(
     )
 
     return (
-      <input
-        ref={handleRef}
-        as={multiline ? 'textarea' : 'input'}
-        type={multiline ? undefined : type}
-        {...props}
-        css={`
-          width: ${({ wide }) => (wide ? '100%' : 'auto')};
-          height: ${height};
-          padding: 0 ${1.5 * GU}px;
-          background: ${theme.surface};
-          border: 1px solid ${theme.borderDark};
-          color: ${theme.surfaceContent};
-          border-radius: ${MEDIUM_RADIUS}px;
-          appearance: none;
-          ${textStyleCss};
+      <>
+        <input
+          ref={handleRef}
+          as={multiline ? 'textarea' : 'input'}
+          type={multiline ? undefined : type}
+          {...props}
+          css={`
+            width: ${({ wide }) => (wide ? '100%' : 'auto')};
+            height: ${height};
+            padding: 0 ${1.5 * GU}px;
+            background: ${theme.surface};
+            border: 1px solid ${error ? theme.negative : theme.borderDark};
+            color: ${theme.surfaceContent};
+            border-radius: ${MEDIUM_RADIUS}px;
+            appearance: none;
+            ${textStyleCss};
 
-          ${multiline
-            ? `
+            ${multiline
+              ? `
               height: auto;
               padding: ${1 * GU}px ${1.5 * GU}px;
               resize: vertical;
             `
-            : ''}
+              : ''}
 
-          &:focus {
-            outline: none;
-            border-color: ${theme.focus};
-            border: 2px solid;
-          }
+            &:focus {
+              outline: none;
+              border-color: ${theme.focus};
+              border: 2px solid;
+            }
 
-          &:read-only {
-            color: ${theme.contentSecondary};
-            border-color: ${theme.borderDark};
-          }
+            &:read-only {
+              color: ${theme.contentSecondary};
+              border-color: ${theme.borderDark};
+            }
 
-          &::placeholder {
-            color: ${theme.surfaceOpened};
-            opacity: 1;
-          }
+            &::placeholder {
+              color: ${theme.surfaceOpened};
+              opacity: 1;
+            }
 
-          &:invalid {
-            box-shadow: none;
-          }
-        `}
-      />
+            &:invalid {
+              box-shadow: none;
+            }
+          `}
+        />
+        {error && errorText && (
+          <div
+            css={`
+              margin-top: ${0.2 * GU}px;
+              margin-left: ${0.5 * GU}px;
+              color: ${theme.negative};
+              ${textStyle('body4')};
+            `}
+          >
+            {errorText}
+          </div>
+        )}
+      </>
     )
   }
 )
 
 TextInput.propTypes = {
   autofocus: PropTypes.bool,
+  error: PropTypes.bool,
+  errorText: PropTypes.node,
   multiline: PropTypes.bool,
   required: PropTypes.bool,
   type: PropTypes.string,

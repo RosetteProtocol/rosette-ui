@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Modal, Root } from '@1hive/1hive-ui'
+import { Button, DropDown, Modal, Root } from '@1hive/1hive-ui'
 import Page from 'comps/Page/Page'
 import Container from 'comps/Page/DemoContainer'
 import readme from 'ui-src/components/Modal/README.md'
@@ -8,10 +8,11 @@ import readme from 'ui-src/components/Modal/README.md'
 class PageModal extends React.Component {
   state = {
     openModal: false,
+    selected: false,
   }
   render() {
     const { title } = this.props
-    const { openModal } = this.state
+    const { openModal, selected } = this.state
     return (
       <Page title={title} readme={readme}>
         <Page.Demo>
@@ -37,6 +38,7 @@ class PageModal extends React.Component {
                       height: 300px;
                     `}
                   >
+                    <DropDown items={['a','b']} selected={selected} onChange={i => this.setState({selected: i})}/>
                     <Button mode="secondary" onClick={this.handleClose}>
                       Close modal
                     </Button>

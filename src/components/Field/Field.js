@@ -10,7 +10,7 @@ import { unselectable } from '../../utils'
 // prop. See `children` in the Field documentation for more details.
 let fieldId = 1
 
-function Field({ children, label, required, ...props }) {
+function Field({ children, error, label, required, ...props }) {
   const theme = useTheme()
 
   const isRequired =
@@ -41,7 +41,7 @@ function Field({ children, label, required, ...props }) {
               align-items: center;
               height: ${2 * GU}px;
               margin-bottom: ${0.5 * GU}px;
-              color: ${theme.surfaceContentSecondary};
+              color: ${error ? theme.negative : theme.surfaceContentSecondary};
               white-space: nowrap;
               ${textStyle('body3')};
               ${unselectable};
@@ -72,6 +72,7 @@ function Field({ children, label, required, ...props }) {
 
 Field.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  error: PropTypes.bool,
   label: PropTypes.node,
   required: PropTypes.bool,
 }

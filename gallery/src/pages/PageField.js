@@ -7,7 +7,7 @@ import readme from 'ui-src/components/Field/README.md'
 
 const PageField = ({ title }) => (
   <Page title={title} readme={readme}>
-    <Page.Demo opaque>
+    <Page.Demo>
       <Container>
         <div>
           <Field label="Enter name here:">
@@ -21,6 +21,16 @@ const PageField = ({ title }) => (
             <TextInput required />
           </Field>
         </div>
+      </Container>
+      <Container>
+        <Field label="Enter number" error>
+          <TextInput
+            readOnly
+            value="213123"
+            error
+            errorText="Provide a valid input"
+          />
+        </Field>
       </Container>
     </Page.Demo>
   </Page>
