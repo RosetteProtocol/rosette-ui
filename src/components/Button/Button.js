@@ -103,14 +103,14 @@ function modeStyles(theme, layoutName, mode, disabled, size) {
   if (mode === 'strong') {
     return {
       background: `linear-gradient(${theme.surface} 0 0) padding-box,
-      linear-gradient(90deg, #FAC758 12.5%, #FFA254 25%, #F86E38 37.5%, #F7513E 50%, #F86E38 62.5%, #FFA254 75%, #FAC758 87.5%) border-box`,
+      linear-gradient(90deg, #FAC758 12.5%, #FFA254 25%, #F86E38 37.5%, #F7513E 50%, #c54031 62.5%, #943025 75%, #622018 87.5%) border-box`,
       color: theme.content,
       iconColor: theme.content,
       border: `${borderSize}px solid transparent`,
       hoverCss: `background-position: 100%`,
       additionalCss: `
           background-size: 250%;
-          transition: background-position 1s ease-in-out;
+          transition: background-position 0.5s ease-in-out;
       `,
     }
   }
@@ -237,7 +237,7 @@ function Button({
   }
 
   const insideData = { size }
-  console.log(theme.surfaceUnder.alpha(0.1))
+
   return (
     <ButtonBase
       ref={innerRef}

@@ -14,23 +14,16 @@ const PageField = ({ title }) => (
             <TextInput />
           </Field>
         </div>
-      </Container>
-      <Container>
         <div>
           <Field label="Enter name here:">
             <TextInput required />
           </Field>
         </div>
-      </Container>
-      <Container>
-        <Field label="Enter number" error>
-          <TextInput
-            readOnly
-            value="213123"
-            error
-            errorText="Provide a valid input"
-          />
-        </Field>
+        <div>
+          <Field label="Enter number" error helperText="Provide a valid input">
+            <TextInput readOnly value="213123" error />
+          </Field>
+        </div>
       </Container>
     </Page.Demo>
   </Page>

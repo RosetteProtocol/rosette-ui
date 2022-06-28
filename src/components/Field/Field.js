@@ -10,7 +10,7 @@ import { unselectable } from '../../utils'
 // prop. See `children` in the Field documentation for more details.
 let fieldId = 1
 
-function Field({ children, error, label, required, ...props }) {
+function Field({ children, error, helperText, label, required, ...props }) {
   const theme = useTheme()
 
   const isRequired =
@@ -30,7 +30,8 @@ function Field({ children, error, label, required, ...props }) {
     <Inside name="Field">
       <div
         css={`
-          margin-bottom: ${3 * GU}px;
+          margin-bottom: ${3.5 * GU}px;
+          position: relative;
         `}
         {...props}
       >
@@ -65,6 +66,19 @@ function Field({ children, error, label, required, ...props }) {
             {typeof children === 'function' ? children({ id }) : children}
           </Inside>
         </label>
+        {helperText && (
+          <div
+            css={`
+              position: absolute;
+              left: 0;
+              bottom: -20px;
+              color: ${error ? theme.negative : theme.surfaceContentSecondary};
+              ${textStyle('body4')};
+            `}
+          >
+            {helperText}
+          </div>
+        )}
       </div>
     </Inside>
   )
@@ -73,6 +87,7 @@ function Field({ children, error, label, required, ...props }) {
 Field.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   error: PropTypes.bool,
+  helperText: PropTypes.string,
   label: PropTypes.node,
   required: PropTypes.bool,
 }
